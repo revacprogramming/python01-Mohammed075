@@ -1,21 +1,13 @@
 # Files
 
-fname = "dataset/romeo.txt" 
-  
-  
- fname = input("Enter filename: ") 
- fhand = open(fname) 
- lst = list() 
- for line in fhand: 
-     l= line.split() 
-     for i in l: 
-         if i in lst: 
-             continue 
-         else: 
-             lst.append(i) 
- lst.sort()             
- print(lst) 
-  
- #for i in l: 
- #if i not in lst: 
-      #lst.append(i)
+fname= "mbox-short.txt"
+count = 0
+average = 0
+fname = input("Enter file name: ")
+fh =open(fname)
+for line in fh:
+    if line.startswith("X-DSPAM-Confidence:"):
+        a=float(line[20:])
+        average=average+a
+        count=count+1
+print("Average spam confidence:",average/count)

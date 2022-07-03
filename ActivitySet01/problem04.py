@@ -1,11 +1,11 @@
 # Conditional Execution
 
-hrs =input("Enter Hours:")
-rate=input("Enter Rate Per Hour:")
-xx= input("Enter The Rate:")
-x=float(xx)
-if h <= 40:
-    print(h * x)
-elif h< 40:
-    print(40*x+(h-40)*1.5*x)
+hrs = float(input("enter hours:"))
+rate = float(input("enter rate:"))
+gross = (hrs * rate)
+if hrs <=40:
+    gross=hrs*rate
+else:
+    gross=40 * rate + 1.5 * rate *(hrs - 40)
+print(gross)
     
